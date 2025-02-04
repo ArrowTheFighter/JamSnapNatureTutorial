@@ -31,6 +31,7 @@ rotation = -1.5708
 shape = SubResource("CircleShape2D_1pwxi")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
