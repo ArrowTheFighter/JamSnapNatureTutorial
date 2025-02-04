@@ -35,8 +35,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("adding enemy")
-	enemies.append(area.get_parent())
+	if(area.get_parent().is_in_group("Enemy")):
+		enemies.append(area.get_parent())
 	pass # Replace with function body.
 
 
@@ -49,6 +49,7 @@ func _on_timer_timeout() -> void:
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 	bullet.global_position = global_position
-	bullet.look_at(closestEnemy.position + Vector2.LEFT * 50)
-	print("Shooting bullet")
+	bullet.look_at(closestEnemy.position + Vector2.LEFT * 25)
+	
 	pass # Replace with function body.
+	
