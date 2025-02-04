@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc3f7vlyyg7fj"]
+[gd_scene load_steps=5 format=3 uid="uid://bc3f7vlyyg7fj"]
 
 [ext_resource type="PackedScene" uid="uid://b3p5idbk2foq2" path="res://Scenes/enemy_spawner.tscn" id="2_5bu3r"]
 [ext_resource type="PackedScene" uid="uid://bckulkr7rfodo" path="res://Scenes/player_base.tscn" id="3_h1gmr"]
 [ext_resource type="PackedScene" uid="uid://boegomjyv524" path="res://Scenes/tower.tscn" id="3_hppjt"]
+[ext_resource type="PackedScene" uid="uid://buo5n7vvg60rv" path="res://Scenes/ui.tscn" id="4_1cdup"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +17,15 @@ position = Vector2(-524, 0)
 
 [node name="Tower" parent="." instance=ExtResource("3_hppjt")]
 position = Vector2(0, -155)
+
+[node name="UI" parent="." node_paths=PackedStringArray("playerBase") instance=ExtResource("4_1cdup")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = -575.0
+offset_top = -323.0
+offset_right = 580.0
+offset_bottom = 328.0
+grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+playerBase = NodePath("../PlayerBase")
