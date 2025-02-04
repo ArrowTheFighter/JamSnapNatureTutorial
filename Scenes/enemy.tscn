@@ -8,7 +8,7 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymu71"]
 size = Vector2(50, 50)
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="Node2D" groups=["Enemy"]]
 script = ExtResource("1_flewx")
 speed = 100.0
 
