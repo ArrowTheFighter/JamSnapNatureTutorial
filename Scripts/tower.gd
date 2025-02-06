@@ -7,11 +7,6 @@ var isFiring
 @onready var timer: Timer = $Timer
 @export var bullet_scene : Resource
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if enemies.size() > 0:
@@ -22,8 +17,7 @@ func _process(delta: float) -> void:
 				closestEnemy = enemy
 	else:
 		closestEnemy = null
-	
-	
+	 
 	if closestEnemy != null:
 		if(!isFiring):
 			timer.start()
@@ -50,6 +44,5 @@ func _on_timer_timeout() -> void:
 	get_parent().add_child(bullet)
 	bullet.global_position = global_position
 	bullet.look_at(closestEnemy.position + Vector2.LEFT * 25)
-	
 	pass # Replace with function body.
 	
