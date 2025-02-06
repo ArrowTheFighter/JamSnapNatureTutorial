@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dtpx4khn3gyvr" path="res://wave_test1.tres" id="7_tcgl7"]
 [ext_resource type="Resource" uid="uid://dc2lqjl07wfpp" path="res://wave_test2.tres" id="8_ac3k3"]
 
-[sub_resource type="Resource" id="Resource_xbtj1"]
+[sub_resource type="Resource" id="Resource_0pg3g"]
 resource_local_to_scene = true
 script = ExtResource("6_ryp62")
 wave_time = 10.0
@@ -51,4 +51,4 @@ position = Vector2(135, -155)
 
 [node name="wave_manager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_isryd")]
 spawner = NodePath("../EnemySpawner")
-waves = [SubResource("Resource_xbtj1"), ExtResource("7_tcgl7"), ExtResource("8_ac3k3")]
+waves = [SubResource("Resource_0pg3g"), ExtResource("7_tcgl7"), ExtResource("8_ac3k3")]
