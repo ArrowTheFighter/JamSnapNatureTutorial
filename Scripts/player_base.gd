@@ -1,10 +1,17 @@
+class_name PlayerBase
 extends Node2D
+
 @onready var area_2d: Area2D = $Area2D
 @onready var timer: Timer = $Timer
 
-var health := 5
+@export var max_health := 5
+var health : int
+
 signal takeDamage(newDamage)
 signal baseDie(hide)
+
+func _ready() -> void:
+	health = max_health
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.get_parent().is_in_group("Enemy")):
