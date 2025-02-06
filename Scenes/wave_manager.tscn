@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://balrlvfk2td84"]
+
+[ext_resource type="Script" path="res://Scripts/wave_manager.gd" id="1_qia3h"]
+[ext_resource type="Resource" uid="uid://bbo1nfcx6xnd7" path="res://wave_test.tres" id="2_mda7e"]
+[ext_resource type="Resource" uid="uid://dtpx4khn3gyvr" path="res://wave_test1.tres" id="3_d5st0"]
+[ext_resource type="Resource" uid="uid://dc2lqjl07wfpp" path="res://wave_test2.tres" id="4_hyahq"]
+
+[node name="wave_manager" type="Node2D"]
+script = ExtResource("1_qia3h")
+waves = [ExtResource("2_mda7e"), ExtResource("3_d5st0"), ExtResource("4_hyahq")]
+
+[node name="spawn_delay" type="Timer" parent="."]
+
+[node name="wave_delay" type="Timer" parent="."]
+
+[connection signal="timeout" from="spawn_delay" to="." method="_on_spawn_delay_timeout"]
+[connection signal="timeout" from="wave_delay" to="." method="_on_wave_delay_timeout"]
