@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc3f7vlyyg7fj"]
+[gd_scene load_steps=10 format=3 uid="uid://bc3f7vlyyg7fj"]
 
 [ext_resource type="PackedScene" uid="uid://b3p5idbk2foq2" path="res://Scenes/enemy_spawner.tscn" id="2_5bu3r"]
 [ext_resource type="PackedScene" uid="uid://bckulkr7rfodo" path="res://Scenes/player_base.tscn" id="3_h1gmr"]
-[ext_resource type="PackedScene" uid="uid://boegomjyv524" path="res://Scenes/tower.tscn" id="3_hppjt"]
 [ext_resource type="PackedScene" uid="uid://buo5n7vvg60rv" path="res://Scenes/ui.tscn" id="4_1cdup"]
+[ext_resource type="PackedScene" uid="uid://balrlvfk2td84" path="res://Scenes/wave_manager.tscn" id="5_isryd"]
+[ext_resource type="PackedScene" uid="uid://carfljx25mffi" path="res://Scenes/tower_spot.tscn" id="5_qxmoa"]
+[ext_resource type="Script" path="res://wave_info.gd" id="6_ryp62"]
+[ext_resource type="Resource" uid="uid://dtpx4khn3gyvr" path="res://wave_test1.tres" id="7_tcgl7"]
+[ext_resource type="Resource" uid="uid://dc2lqjl07wfpp" path="res://wave_test2.tres" id="8_ac3k3"]
+
+[sub_resource type="Resource" id="Resource_l30yl"]
+resource_local_to_scene = true
+script = ExtResource("6_ryp62")
+wave_time = 10.0
+total_enemies = 6
 
 [node name="Main" type="Node2D"]
 
@@ -14,9 +24,6 @@ position = Vector2(506, 0)
 
 [node name="PlayerBase" parent="." instance=ExtResource("3_h1gmr")]
 position = Vector2(-524, 0)
-
-[node name="Tower" parent="." instance=ExtResource("3_hppjt")]
-position = Vector2(0, -155)
 
 [node name="UI" parent="." node_paths=PackedStringArray("playerBase") instance=ExtResource("4_1cdup")]
 anchors_preset = 10
@@ -29,3 +36,17 @@ grow_vertical = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 playerBase = NodePath("../PlayerBase")
+metadata/_edit_lock_ = true
+
+[node name="tower_spot" parent="." instance=ExtResource("5_qxmoa")]
+position = Vector2(-128, -154)
+
+[node name="tower_spot2" parent="." instance=ExtResource("5_qxmoa")]
+position = Vector2(1, -155)
+
+[node name="tower_spot3" parent="." instance=ExtResource("5_qxmoa")]
+position = Vector2(135, -155)
+
+[node name="wave_manager" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_isryd")]
+spawner = NodePath("../EnemySpawner")
+waves = [SubResource("Resource_l30yl"), ExtResource("7_tcgl7"), ExtResource("8_ac3k3")]
