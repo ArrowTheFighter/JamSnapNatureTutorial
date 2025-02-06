@@ -27,8 +27,12 @@ script = ExtResource("1_qivfl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qhmh1")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
 mesh = SubResource("QuadMesh_r3yiv")
 texture = SubResource("GradientTexture1D_y1q86")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
