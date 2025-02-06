@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://buo5n7vvg60rv"]
+[gd_scene load_steps=3 format=3 uid="uid://buo5n7vvg60rv"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_a74np"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gq267"]
+font_size = 116
+font_color = Color(0.763951, 0.849461, 0.924227, 1)
+outline_size = 35
+outline_color = Color(0, 0, 0, 0)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(8, 10)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -24,3 +33,20 @@ offset_bottom = -31.0
 grow_vertical = 0
 max_value = 1.0
 value = 1.0
+
+[node name="you_lose_text" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Lose"
+label_settings = SubResource("LabelSettings_gq267")
