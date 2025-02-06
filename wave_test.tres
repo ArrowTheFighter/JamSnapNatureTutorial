@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WaveInfo" load_steps=2 format=3 uid="uid://bbo1nfcx6xnd7"]
+
+[ext_resource type="Script" path="res://wave_info.gd" id="1_wp823"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_wp823")
+wave_time = 10.0
+total_enemies = 6
