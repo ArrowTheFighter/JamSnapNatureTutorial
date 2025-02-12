@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WaveInfo" load_steps=2 format=3 uid="uid://ca3gdqr22mk10"]
+
+[ext_resource type="Script" path="res://Scripts/wave_info.gd" id="1_hq4vc"]
+
+[resource]
+script = ExtResource("1_hq4vc")
+wave_duration = 12.0
+wave_between_delay = 6.0
+wave_total_enemies = 16

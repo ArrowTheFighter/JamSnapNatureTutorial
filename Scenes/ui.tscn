@@ -1,15 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://buo5n7vvg60rv"]
+[gd_scene load_steps=3 format=3 uid="uid://daaq52853hs13"]
 
-[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_a74np"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_1fwud"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_gq267"]
-font_size = 116
-font_color = Color(0.763951, 0.849461, 0.924227, 1)
-outline_size = 35
-outline_color = Color(0, 0, 0, 0)
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(8, 10)
+[sub_resource type="LabelSettings" id="LabelSettings_rkaux"]
+font_size = 100
+shadow_color = Color(0.178908, 4.50624e-05, 0.200157, 1)
+shadow_offset = Vector2(5, 5)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -18,23 +14,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_a74np")
+mouse_filter = 1
+script = ExtResource("1_1fwud")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = -58.0
-offset_right = 389.0
-offset_bottom = -31.0
-grow_vertical = 0
+offset_left = 69.0
+offset_top = 51.0
+offset_right = 447.0
+offset_bottom = 100.0
 max_value = 1.0
 value = 1.0
 
-[node name="you_lose_text" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -42,11 +34,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -202.5
+offset_top = -68.5
+offset_right = 202.5
+offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "You Lose"
-label_settings = SubResource("LabelSettings_gq267")
+text = "You lose"
+label_settings = SubResource("LabelSettings_rkaux")

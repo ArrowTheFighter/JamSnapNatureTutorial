@@ -1,23 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://balrlvfk2td84"]
+[gd_scene load_steps=4 format=3 uid="uid://b0r06gbixyu10"]
 
-[ext_resource type="Script" path="res://Scripts/wave_manager.gd" id="1_qia3h"]
-[ext_resource type="Script" path="res://wave_info.gd" id="2_n7lsg"]
-[ext_resource type="Resource" uid="uid://dtpx4khn3gyvr" path="res://wave_test1.tres" id="3_d5st0"]
-[ext_resource type="Resource" uid="uid://dc2lqjl07wfpp" path="res://wave_test2.tres" id="4_hyahq"]
-
-[sub_resource type="Resource" id="Resource_vsfpe"]
-resource_local_to_scene = true
-script = ExtResource("2_n7lsg")
-wave_time = 10.0
-total_enemies = 6
+[ext_resource type="Script" path="res://Scripts/wave_manager.gd" id="1_5rk27"]
+[ext_resource type="Resource" uid="uid://btvkk1w0be3t5" path="res://WaveInfo/Wave_1_info.tres" id="2_tkb7q"]
+[ext_resource type="Resource" uid="uid://ca3gdqr22mk10" path="res://WaveInfo/Wave_2_info.tres" id="3_pg7nh"]
 
 [node name="wave_manager" type="Node2D"]
-script = ExtResource("1_qia3h")
-waves = [SubResource("Resource_vsfpe"), ExtResource("3_d5st0"), ExtResource("4_hyahq")]
-
-[node name="spawn_delay" type="Timer" parent="."]
+script = ExtResource("1_5rk27")
+waves = [ExtResource("2_tkb7q"), ExtResource("3_pg7nh")]
 
 [node name="wave_delay" type="Timer" parent="."]
 
-[connection signal="timeout" from="spawn_delay" to="." method="_on_spawn_delay_timeout"]
+[node name="enemy_delay" type="Timer" parent="."]
+
 [connection signal="timeout" from="wave_delay" to="." method="_on_wave_delay_timeout"]
+[connection signal="timeout" from="enemy_delay" to="." method="_on_enemy_delay_timeout"]

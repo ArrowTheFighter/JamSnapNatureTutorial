@@ -1,13 +1,14 @@
-class_name Spawner
 extends Node2D
+class_name EnemySpawner
 
-@onready var timer: Timer = $Timer
-
-@export var enemy_scene: Resource
+@export var enemy_scene : Resource
 
 func spawn_enemy():
-	var instance = enemy_scene.instantiate()
-	get_parent().add_child(instance)
-	instance.global_position = global_position + Vector2.UP * (randf_range(-1,1) * 30)
-	timer.wait_time = timer.wait_time * 0.98
-	
+	var scene_instance = enemy_scene.instantiate()
+	add_child(scene_instance)
+	scene_instance.global_position = global_position
+
+
+func _on_timer_timeout() -> void:
+	spawn_enemy()
+	pass # Replace with function body.

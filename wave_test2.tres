@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="WaveInfo" load_steps=2 format=3 uid="uid://dc2lqjl07wfpp"]
-
-[ext_resource type="Script" path="res://wave_info.gd" id="1_3paja"]
-
-[resource]
-script = ExtResource("1_3paja")
-wave_time = 6.0
-total_enemies = 12
