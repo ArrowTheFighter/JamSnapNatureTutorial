@@ -30,5 +30,5 @@ func _on_wave_delay_timeout() -> void:
 
 
 func _on_enemy_delay_timeout() -> void:
-	enemy_spawner.spawn_enemy()
+	enemy_spawner.spawn_enemy(waves[current_wave].wave_enemy)
 	pass # Replace with function body.

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WaveInfo" load_steps=3 format=3 uid="uid://ca3gdqr22mk10"]
+
+[ext_resource type="Script" path="res://wave_info.gd" id="1_hq4vc"]
+[ext_resource type="PackedScene" uid="uid://dggs6n3dimsbv" path="res://strong_enemy.tscn" id="2_byu6o"]
+
+[resource]
+script = ExtResource("1_hq4vc")
+wave_duration = 12.0
+wave_between_delay = 6.0
+wave_total_enemies = 6
+wave_enemy = ExtResource("2_byu6o")

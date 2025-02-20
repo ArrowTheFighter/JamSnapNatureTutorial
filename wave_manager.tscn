@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0r06gbixyu10"]
 
-[ext_resource type="Script" path="res://Scripts/wave_manager.gd" id="1_5rk27"]
-[ext_resource type="Resource" uid="uid://btvkk1w0be3t5" path="res://WaveInfo/Wave_1_info.tres" id="2_tkb7q"]
-[ext_resource type="Resource" uid="uid://ca3gdqr22mk10" path="res://WaveInfo/Wave_2_info.tres" id="3_pg7nh"]
+[ext_resource type="Script" path="res://wave_manager.gd" id="1_5rk27"]
+[ext_resource type="Resource" uid="uid://btvkk1w0be3t5" path="res://Wave_1_info.tres" id="2_tkb7q"]
+[ext_resource type="Resource" uid="uid://ca3gdqr22mk10" path="res://Wave_2_info.tres" id="3_pg7nh"]
 
 [node name="wave_manager" type="Node2D"]
 script = ExtResource("1_5rk27")

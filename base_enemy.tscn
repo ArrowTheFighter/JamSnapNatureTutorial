@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs2l4s5dlorti"]
 
-[ext_resource type="Script" path="res://Scripts/base_enemy.gd" id="1_364cl"]
+[ext_resource type="Script" path="res://base_enemy.gd" id="1_wjj3n"]
 
 [sub_resource type="Gradient" id="Gradient_332in"]
 colors = PackedColorArray(0.886275, 0.0196078, 0.0392157, 1, 0.937255, 0.796078, 0, 1)
@@ -16,7 +16,7 @@ fill_from = Vector2(0.5, 0.5)
 size = Vector2(50, 50)
 
 [node name="base_enemy" type="Node2D" groups=["Enemies"]]
-script = ExtResource("1_364cl")
+script = ExtResource("1_wjj3n")
 speed = 80
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

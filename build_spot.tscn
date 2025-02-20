@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crdsbn6e22crd"]
 
-[ext_resource type="Script" path="res://Scripts/build_spot.gd" id="1_5rv4o"]
-[ext_resource type="PackedScene" uid="uid://c062yoh0eot6" path="res://Scenes/base_tower.tscn" id="2_upxj6"]
+[ext_resource type="Script" path="res://build_spot.gd" id="1_5rv4o"]
+[ext_resource type="PackedScene" uid="uid://c062yoh0eot6" path="res://base_tower.tscn" id="2_upxj6"]
 
 [sub_resource type="Gradient" id="Gradient_foga1"]
 offsets = PackedFloat32Array(0.5625, 0.885417)

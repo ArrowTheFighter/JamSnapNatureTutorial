@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbl2675fuqeby"]
 
-[ext_resource type="Script" path="res://Scripts/defend_point.gd" id="1_v5xi6"]
+[ext_resource type="Script" path="res://defend_point.gd" id="1_v5xi6"]
 
 [sub_resource type="Gradient" id="Gradient_11suf"]
 colors = PackedColorArray(0, 0.337307, 0.0126036, 1, 0.93197, 0.67446, 0.196262, 1)

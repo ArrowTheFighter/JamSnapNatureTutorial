@@ -1,0 +1,253 @@
+[gd_scene load_steps=20 format=3 uid="uid://daaq52853hs13"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_1fwud"]
+[ext_resource type="Script" path="res://tower_button.gd" id="2_ln1lx"]
+[ext_resource type="PackedScene" uid="uid://c062yoh0eot6" path="res://base_tower.tscn" id="3_kfpxh"]
+[ext_resource type="PackedScene" uid="uid://csm0fd3wg38g5" path="res://fast_tower.tscn" id="4_sdtqe"]
+[ext_resource type="PackedScene" uid="uid://cxr8ak3111b8i" path="res://slow_tower.tscn" id="5_x40y5"]
+[ext_resource type="PackedScene" uid="uid://bdnhe76bakkcy" path="res://explosion_tower.tscn" id="6_ejo68"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkaux"]
+font_size = 100
+shadow_color = Color(0.178908, 4.50624e-05, 0.200157, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_co2ko"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_4706x"]
+font_size = 45
+
+[sub_resource type="Gradient" id="Gradient_sncip"]
+offsets = PackedFloat32Array(0.40625, 1)
+colors = PackedColorArray(0.360784, 0, 0.8, 1, 1, 0.298039, 0.152941, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2vxrw"]
+gradient = SubResource("Gradient_sncip")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_iakwt"]
+offsets = PackedFloat32Array(0.40625, 1)
+colors = PackedColorArray(0, 0.360472, 0.43592, 1, 1, 0.298039, 0.152941, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b1y1c"]
+gradient = SubResource("Gradient_iakwt")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_7qa0m"]
+offsets = PackedFloat32Array(0.40625, 1)
+colors = PackedColorArray(0.505882, 1, 0.972549, 1, 1, 0.298039, 0.152941, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4802m"]
+gradient = SubResource("Gradient_7qa0m")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_68io6"]
+offsets = PackedFloat32Array(0.40625, 0.767677)
+colors = PackedColorArray(0.807843, 0.0470588, 0, 1, 1, 0.298039, 0.152941, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qbwqt"]
+gradient = SubResource("Gradient_68io6")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_w57qq"]
+offsets = PackedFloat32Array(0.595506, 0.662921, 0.808989)
+colors = PackedColorArray(1, 0.611765, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jibwd"]
+gradient = SubResource("Gradient_w57qq")
+width = 80
+height = 80
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_1fwud")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 69.0
+offset_top = 51.0
+offset_right = 447.0
+offset_bottom = 100.0
+max_value = 1.0
+value = 1.0
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.5
+offset_top = -68.5
+offset_right = 202.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You lose"
+label_settings = SubResource("LabelSettings_rkaux")
+
+[node name="KillsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -97.0
+offset_right = -32.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Kills: 0"
+label_settings = SubResource("LabelSettings_co2ko")
+
+[node name="SeedsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 544.0
+offset_right = 255.0
+offset_bottom = 607.0
+text = "Seeds: 0"
+label_settings = SubResource("LabelSettings_4706x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -294.0
+offset_top = -123.0
+offset_right = 294.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="TowerButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("GradientTexture2D_2vxrw")
+script = ExtResource("2_ln1lx")
+tower_scene = ExtResource("3_kfpxh")
+cost = 20
+
+[node name="Label" type="Label" parent="HBoxContainer/TowerButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TowerButton2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("GradientTexture2D_b1y1c")
+script = ExtResource("2_ln1lx")
+tower_scene = ExtResource("4_sdtqe")
+cost = 30
+
+[node name="Label" type="Label" parent="HBoxContainer/TowerButton2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TowerButton3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("GradientTexture2D_4802m")
+script = ExtResource("2_ln1lx")
+tower_scene = ExtResource("5_x40y5")
+cost = 25
+
+[node name="Label" type="Label" parent="HBoxContainer/TowerButton3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TowerButton4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("GradientTexture2D_qbwqt")
+script = ExtResource("2_ln1lx")
+tower_scene = ExtResource("6_ejo68")
+cost = 50
+
+[node name="Label" type="Label" parent="HBoxContainer/TowerButton4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TowerButton5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_icons/icon = SubResource("GradientTexture2D_jibwd")
+script = ExtResource("2_ln1lx")
+
+[node name="Label" type="Label" parent="HBoxContainer/TowerButton5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = -9.0
+grow_horizontal = 2
+text = "20"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/TowerButton" to="HBoxContainer/TowerButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/TowerButton2" to="HBoxContainer/TowerButton2" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/TowerButton3" to="HBoxContainer/TowerButton3" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/TowerButton4" to="HBoxContainer/TowerButton4" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/TowerButton5" to="HBoxContainer/TowerButton5" method="_on_pressed"]

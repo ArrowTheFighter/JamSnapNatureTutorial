@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbumq8v2bqlwt"]
 
-[ext_resource type="Script" path="res://Scripts/base_bullet.gd" id="1_ko5sg"]
+[ext_resource type="Script" path="res://base_bullet.gd" id="1_alxqy"]
 
 [sub_resource type="Gradient" id="Gradient_5dvo6"]
 
@@ -15,7 +15,7 @@ fill_from = Vector2(0.5, 0.5)
 size = Vector2(30, 10)
 
 [node name="base_bullet" type="Node2D"]
-script = ExtResource("1_ko5sg")
+script = ExtResource("1_alxqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_2q5xc")

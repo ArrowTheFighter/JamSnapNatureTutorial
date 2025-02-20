@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dggs6n3dimsbv"]
+
+[ext_resource type="Script" path="res://base_enemy.gd" id="1_24h05"]
+
+[sub_resource type="Gradient" id="Gradient_332in"]
+offsets = PackedFloat32Array(0.387205, 0.454545, 0.79798, 0.851852)
+colors = PackedColorArray(0.369735, 0.000530978, 0.401722, 1, 0.937255, 0.796078, 0, 0.90099, 0.937255, 0.796078, 0, 1, 0.937255, 0.796078, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nl64i"]
+gradient = SubResource("Gradient_332in")
+width = 50
+height = 50
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6msxf"]
+size = Vector2(50, 50)
+
+[node name="base_enemy" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_24h05")
+speed = 80
+health = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_nl64i")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6msxf")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

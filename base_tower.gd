@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name BaseTower
 @onready var timer: Timer = $Timer
 
 var enemies := []
@@ -7,10 +7,12 @@ var current_target
 var is_firing
 
 @export var bullet_scene : Resource
+@export var fire_delay := 1.0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.wait_time = fire_delay
 	pass # Replace with function body.
 
 

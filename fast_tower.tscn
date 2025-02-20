@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://csm0fd3wg38g5"]
+
+[ext_resource type="Script" path="res://base_tower.gd" id="1_p1xnp"]
+[ext_resource type="PackedScene" uid="uid://cbumq8v2bqlwt" path="res://base_bullet.tscn" id="2_wu26q"]
+
+[sub_resource type="Gradient" id="Gradient_iakwt"]
+offsets = PackedFloat32Array(0.40625, 1)
+colors = PackedColorArray(0, 0.360472, 0.43592, 1, 1, 0.298039, 0.152941, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v4f0m"]
+gradient = SubResource("Gradient_iakwt")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5bwk"]
+radius = 200.0
+
+[node name="fast_tower" type="Node2D"]
+script = ExtResource("1_p1xnp")
+bullet_scene = ExtResource("2_wu26q")
+fire_delay = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_v4f0m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b5bwk")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

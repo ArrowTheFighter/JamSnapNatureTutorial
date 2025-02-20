@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpj6dhwfspjo"]
+
+[ext_resource type="PackedScene" uid="uid://cu7bgjk8aj8a7" path="res://enemy_spawner.tscn" id="2_ehqpi"]
+[ext_resource type="PackedScene" uid="uid://cbl2675fuqeby" path="res://defend_point.tscn" id="3_2238c"]
+[ext_resource type="PackedScene" uid="uid://daaq52853hs13" path="res://ui.tscn" id="4_qmuho"]
+[ext_resource type="PackedScene" uid="uid://crdsbn6e22crd" path="res://build_spot.tscn" id="6_2pefj"]
+[ext_resource type="PackedScene" uid="uid://b0r06gbixyu10" path="res://wave_manager.tscn" id="7_yydl4"]
+[ext_resource type="PackedScene" uid="uid://bx0ouhyyj5syr" path="res://stats_manager.tscn" id="8_gutpi"]
+
+[node name="main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="enemy_spawner" parent="." instance=ExtResource("2_ehqpi")]
+position = Vector2(547, 0)
+
+[node name="Defend point" parent="." instance=ExtResource("3_2238c")]
+position = Vector2(-554, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" node_paths=PackedStringArray("defend_point", "stats_manager") instance=ExtResource("4_qmuho")]
+defend_point = NodePath("../../Defend point")
+stats_manager = NodePath("../../stats_manager")
+
+[node name="build_spot1" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-69, -125)
+
+[node name="build_spot4" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(81, -125)
+
+[node name="build_spot5" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(231, -125)
+
+[node name="build_spot6" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(381, -125)
+
+[node name="build_spot2" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-219, -125)
+
+[node name="build_spot3" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-369, -125)
+
+[node name="build_spot7" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-69, 125)
+
+[node name="build_spot8" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(81, 125)
+
+[node name="build_spot9" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(231, 125)
+
+[node name="build_spot10" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(381, 125)
+
+[node name="build_spot11" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-219, 125)
+
+[node name="build_spot12" parent="." instance=ExtResource("6_2pefj")]
+position = Vector2(-369, 125)
+
+[node name="wave_manager" parent="." node_paths=PackedStringArray("enemy_spawner") instance=ExtResource("7_yydl4")]
+position = Vector2(78, -12)
+enemy_spawner = NodePath("../enemy_spawner")
+
+[node name="stats_manager" parent="." instance=ExtResource("8_gutpi")]
+seeds = 20

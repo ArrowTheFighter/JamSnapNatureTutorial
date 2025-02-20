@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c062yoh0eot6"]
 
-[ext_resource type="Script" path="res://Scripts/base_tower.gd" id="1_jdet5"]
-[ext_resource type="PackedScene" uid="uid://cbumq8v2bqlwt" path="res://Scenes/base_bullet.tscn" id="2_cehu4"]
+[ext_resource type="Script" path="res://base_tower.gd" id="1_1tond"]
+[ext_resource type="PackedScene" uid="uid://cbumq8v2bqlwt" path="res://base_bullet.tscn" id="2_higga"]
 
 [sub_resource type="Gradient" id="Gradient_sncip"]
 offsets = PackedFloat32Array(0.40625, 1)
@@ -16,8 +16,8 @@ fill_from = Vector2(0.5, 0.5)
 radius = 200.0
 
 [node name="base_tower" type="Node2D"]
-script = ExtResource("1_jdet5")
-bullet_scene = ExtResource("2_cehu4")
+script = ExtResource("1_1tond")
+bullet_scene = ExtResource("2_higga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_v4f0m")
